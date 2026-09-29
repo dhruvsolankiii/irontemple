@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Expert Trainers – IronTemple Gym</title>
+  <meta name="description" content="Meet our team of certified fitness instructors at IronTemple. Learn from coaches specializing in strength, cardio, and functional fitness." />
+  
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon"><i class="fa-solid fa-dumbbell"></i></div>
+        IronTemple
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link active" href="trainers.html">Trainers</a></li>
+          <li class="nav-item"><a class="nav-link" href="bmi.html">BMI Calculator</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="login.html" class="btn btn-outline-primary">Login</a>
+          <a href="register.html" class="btn btn-primary">Join Now</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="py-5 bg-white border-bottom">
+    <div class="container text-center">
+      <div class="section-badge mb-2"><i class="fa-solid fa-user-ninja"></i> Professional Coaches</div>
+      <h1 class="fw-bold display-5 mb-3">Meet Our Expert Trainers</h1>
+      <p class="text-muted lead mx-auto" style="max-width: 600px;">
+        Certified fitness instructors committed to safety, posture mastery, and consistent fitness progress.
+      </p>
+    </div>
+  </header>
+
+  <!-- TRAINERS GRID -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Trainer 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card">
+            <div class="trainer-img">
+              <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=600&auto=format&fit=crop" alt="Rahul Sharma" />
+            </div>
+            <div class="trainer-info">
+              <div class="trainer-name">Rahul Sharma</div>
+              <div class="trainer-role">Strength Coach</div>
+              <div class="trainer-exp"><i class="fa-solid fa-clock-rotate-left me-1"></i> 5+ Years Experience</div>
+              <p class="text-muted small mb-3">Specializes in powerlifting, hypertrophy training, and progressive overload strategy.</p>
+              <button class="btn btn-outline-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#trainerModal1">View Profile</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trainer 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card">
+            <div class="trainer-img">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=600&auto=format&fit=crop" alt="Alex Patel" />
+            </div>
+            <div class="trainer-info">
+              <div class="trainer-name">Alex Patel</div>
+              <div class="trainer-role">Cardio Specialist</div>
+              <div class="trainer-exp"><i class="fa-solid fa-clock-rotate-left me-1"></i> 4+ Years Experience</div>
+              <p class="text-muted small mb-3">Expert in high-intensity interval training (HIIT) and metabolic endurance conditioning.</p>
+              <button class="btn btn-outline-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#trainerModal2">View Profile</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trainer 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card">
+            <div class="trainer-img">
+              <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=600&auto=format&fit=crop" alt="Priya Shah" />
+            </div>
+            <div class="trainer-info">
+              <div class="trainer-name">Priya Shah</div>
+              <div class="trainer-role">Fitness Coach</div>
+              <div class="trainer-exp"><i class="fa-solid fa-clock-rotate-left me-1"></i> 6+ Years Experience</div>
+              <p class="text-muted small mb-3">Focuses on core stability, mobility, active recovery, and holistic weight management.</p>
+              <button class="btn btn-outline-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#trainerModal3">View Profile</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trainer 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card">
+            <div class="trainer-img">
+              <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=600&auto=format&fit=crop" alt="Vikram Singh" />
+            </div>
+            <div class="trainer-info">
+              <div class="trainer-name">Vikram Singh</div>
+              <div class="trainer-role">Functional Trainer</div>
+              <div class="trainer-exp"><i class="fa-solid fa-clock-rotate-left me-1"></i> 7+ Years Experience</div>
+              <p class="text-muted small mb-3">Specializes in kettlebell protocols, athletic agility, and movement biomechanics.</p>
+              <button class="btn btn-outline-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#trainerModal4">View Profile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMPLE TRAINER MODAL DEMOS -->
+  <div class="modal fade" id="trainerModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold">Rahul Sharma — Strength Coach</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted">Rahul has over 5 years of experience coaching strength athletes and gym members. He specializes in compound lifting mechanics, barbell technique, and muscle hyper-growth.</p>
+          <div class="p-3 bg-light rounded-3">
+            <div class="fw-bold mb-1">Certifications:</div>
+            <div class="text-muted small">CSCS Certified Strength Specialist, Kettlebell Level 2</div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="contact.html" class="btn btn-primary w-100">Request Training Session</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="trainerModal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold">Alex Patel — Cardio Specialist</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted">Alex has 4 years of experience guiding members through metabolic conditioning, endurance builder programs, and fat-loss interval routines.</p>
+          <div class="p-3 bg-light rounded-3">
+            <div class="fw-bold mb-1">Certifications:</div>
+            <div class="text-muted small">ACE Personal Trainer, Endurance & HIIT Coach</div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="contact.html" class="btn btn-primary w-100">Request Training Session</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="trainerModal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold">Priya Shah — Fitness Coach</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted">Priya brings 6 years of expertise in mobility, postural alignment, core strengthening, and balanced lifestyle diet management.</p>
+          <div class="p-3 bg-light rounded-3">
+            <div class="fw-bold mb-1">Certifications:</div>
+            <div class="text-muted small">NASM Certified Trainer, Functional Movement Specialist</div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="contact.html" class="btn btn-primary w-100">Request Training Session</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="trainerModal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold">Vikram Singh — Functional Coach</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted">Vikram focuses on full-body athletic movement, agility, and injury prevention techniques with 7+ years of coaching experience.</p>
+          <div class="p-3 bg-light rounded-3">
+            <div class="fw-bold mb-1">Certifications:</div>
+            <div class="text-muted small">ISSA Certified Trainer, Olympic Lifting Coach</div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="contact.html" class="btn btn-primary w-100">Request Training Session</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <div class="brand-icon"><i class="fa-solid fa-dumbbell"></i></div>
+            IronTemple
+          </div>
+          <p class="text-muted mb-3" style="max-width: 320px;">
+            Build a stronger you with IronTemple. Your fitness journey, managed smarter.
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About IronTemple</a></li>
+            <li><a href="membership.html">Membership Plans</a></li>
+            <li><a href="trainers.html">Our Trainers</a></li>
+            <li><a href="bmi.html">BMI Calculator</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Support & Info</h5>
+          <ul class="footer-links">
+            <li><a href="#">FAQ & Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title">Account</h5>
+          <ul class="footer-links">
+            <li><a href="login.html">Member Login</a></li>
+            <li><a href="register.html">Join IronTemple</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">© 2026 IronTemple. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-4.0.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

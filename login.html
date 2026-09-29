@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Login – IronTemple Gym</title>
+  <meta name="description" content="Access your IronTemple Gym member portal. Manage memberships, workout routines, and trainer bookings." />
+  
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body style="background-color: var(--light-bg);">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon"><i class="fa-solid fa-dumbbell"></i></div>
+        IronTemple
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="trainers.html">Trainers</a></li>
+          <li class="nav-item"><a class="nav-link" href="bmi.html">BMI Calculator</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="login.html" class="btn btn-outline-primary active">Login</a>
+          <a href="register.html" class="btn btn-primary">Join Now</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- AUTH CONTENT -->
+  <main class="auth-wrapper">
+    <div class="container d-flex justify-content-center">
+      <div class="auth-card">
+        <div class="auth-header">
+          <div class="brand-icon mx-auto mb-3" style="width: 44px; height: 44px; font-size: 1.3rem;">
+            <i class="fa-solid fa-dumbbell"></i>
+          </div>
+          <h2>Welcome Back</h2>
+          <p>Log in to access your IronTemple member portal.</p>
+        </div>
+
+        <div id="loginSuccess" class="alert alert-success d-none mb-4" role="alert">
+          <i class="fa-solid fa-circle-check me-2"></i> Login successful! Redirecting...
+        </div>
+
+        <form id="loginForm" action="" method="POST" novalidate>
+          <div class="mb-3">
+            <label for="login-email" class="form-label">Email Address *</label>
+            <input type="email" id="login-email" name="loginEmail" class="form-control" placeholder="name@example.com" data-validation="required email" />
+            <div class="invalid-feedback-custom" id="loginEmailError"></div>
+          </div>
+
+          <div class="mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <label for="login-password" class="form-label mb-0">Password *</label>
+              <a href="#" class="small text-muted">Forgot password?</a>
+            </div>
+            <div class="input-group">
+              <input type="password" id="login-password" name="loginPassword" class="form-control" placeholder="••••••••" data-validation="required password" />
+              <button class="btn toggle-password-btn" type="button" data-target="login-password" aria-label="Toggle Password Visibility">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback-custom" id="loginPasswordError"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
+            <i class="fa-solid fa-right-to-bracket me-2"></i> Login
+          </button>
+          
+          <a href="index.html" class="btn btn-outline-primary w-100">
+            <i class="fa-solid fa-arrow-left me-2"></i> Back to Home
+          </a>
+        </form>
+
+        <div class="text-center mt-4 text-muted small">
+          Don't have an account? <a href="register.html" class="fw-bold">Join Now</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="footer-bottom mt-0 pt-0 border-0 text-center">
+        <p class="mb-0">© 2026 IronTemple. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-4.0.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
