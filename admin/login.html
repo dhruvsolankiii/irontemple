@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login - IronTemple</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/portal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <main class="auth-wrapper">
+    <div class="container d-flex justify-content-center">
+      <div class="auth-card">
+        <div class="auth-header">
+          <div class="brand-icon mx-auto mb-3"><i class="fa-solid fa-shield-halved"></i></div>
+          <h2>Admin Portal</h2>
+          <p>Sign in to manage IronTemple operations.</p>
+        </div>
+        <div class="alert alert-info d-none" data-portal-alert role="status"></div>
+        <form id="adminLoginForm">
+          <div class="mb-3">
+            <label class="form-label" for="admin-email">Email Address</label>
+            <input class="form-control" id="admin-email" name="email" type="email" required placeholder="admin@irontemple.com" />
+          </div>
+          <div class="mb-4">
+            <label class="form-label" for="admin-password">Password</label>
+            <input class="form-control" id="admin-password" name="password" type="password" required placeholder="Enter password" />
+          </div>
+          <button class="btn btn-primary w-100" type="submit">Sign in to dashboard</button>
+        </form>
+        <a class="d-block text-center mt-4 small" href="../index.html">Back to public website</a>
+      </div>
+    </div>
+  </main>
+  <script src="../js/portal.js"></script>
+  <script>
+    document.getElementById("adminLoginForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!this.checkValidity()) {
+        this.classList.add("was-validated");
+        return;
+      }
+      window.location.href = "dashboard.html";
+    });
+  </script>
+</body>
+</html>
