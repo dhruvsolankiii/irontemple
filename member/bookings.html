@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Bookings - IronTemple</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/portal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="portal-body">
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <a class="portal-brand" href="dashboard.html"><span class="brand-icon"><i class="fa-solid fa-dumbbell"></i></span> IronTemple</a>
+      <nav class="portal-nav" aria-label="Member navigation">
+        <span class="nav-section">My account</span>
+        <a href="dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+        <a href="profile.html"><i class="fa-solid fa-user"></i> My profile</a>
+        <a href="membership.html"><i class="fa-solid fa-id-card"></i> Membership</a>
+        <a class="active" href="bookings.html"><i class="fa-solid fa-calendar-check"></i> My bookings</a>
+        <span class="nav-section">Progress</span>
+        <a href="workout-plans.html"><i class="fa-solid fa-dumbbell"></i> Workout plans</a>
+        <a href="attendance.html"><i class="fa-solid fa-chart-line"></i> Attendance</a>
+        <a href="bmi-history.html"><i class="fa-solid fa-heart-pulse"></i> BMI history</a>
+      </nav>
+      <div class="portal-sidebar-footer"><a class="portal-nav-link text-white" href="../index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></div>
+    </aside>
+    <main class="portal-main">
+      <header class="portal-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-light portal-mobile-toggle" data-portal-menu aria-expanded="false" aria-label="Open member navigation"><i class="fa-solid fa-bars"></i></button>
+          <div><strong>My bookings</strong><div class="small text-muted">View upcoming and past sessions</div></div>
+        </div>
+        <div class="d-flex align-items-center gap-2"><span class="portal-avatar">AK</span><span class="d-none d-sm-inline">Ananya Kapoor</span></div>
+      </header>
+      <div class="portal-content">
+        <div class="portal-page-heading">
+          <div>
+            <h1>Bookings</h1>
+            <p class="text-muted">Manage your scheduled sessions with trainers.</p>
+          </div>
+          <button class="btn btn-primary" data-demo-action="Booking request is demo action."><i class="fa-solid fa-calendar-plus me-2"></i>Book a session</button>
+        </div>
+
+        <section class="portal-card">
+          <div class="portal-card-header">
+            <h2>Upcoming sessions</h2>
+            <div class="d-flex gap-2"><input class="form-control form-control-sm" data-table-filter="#bookingTable" placeholder="Search bookings..." aria-label="Search bookings" /></div>
+          </div>
+          <div class="table-responsive">
+            <table class="table portal-table" id="bookingTable">
+              <thead><tr><th>Session</th><th>Trainer</th><th>Date & Time</th><th>Location</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td>Strength & conditioning</td><td>Arjun Mehta</td><td>2026-10-06 18:00</td><td>Gym Floor A</td><td><span class="badge text-bg-primary">Confirmed</span></td><td><button class="btn btn-sm btn-light" data-demo-action="View booking details."><i class="fa-solid fa-ellipsis"></i></button></td></tr>
+                <tr><td>Mobility session</td><td>Priya Shah</td><td>2026-10-09 07:00</td><td>Studio B</td><td><span class="badge text-bg-warning">Pending</span></td><td><button class="btn btn-sm btn-light" data-demo-action="View booking details."><i class="fa-solid fa-ellipsis"></i></button></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="portal-card-body border-top d-flex justify-content-between align-items-center"><span class="small text-muted">Showing upcoming sessions</span><div></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="../js/portal.js"></script>
+</body>
+</html>

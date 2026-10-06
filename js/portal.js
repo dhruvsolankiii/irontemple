@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (sidebar && toggle) {
     toggle.addEventListener("click", function () {
       sidebar.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", sidebar.classList.contains("is-open"));
+      toggle.setAttribute("aria-expanded", String(sidebar.classList.contains("is-open")));
     });
 
     document.addEventListener("click", function (event) {
@@ -17,6 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
         sidebar.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
       }
+    });
+
+    document.querySelectorAll(".portal-nav a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        sidebar.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
@@ -34,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelectorAll("[data-demo-action]").forEach(function (button) {
     button.addEventListener("click", function () {
-      const message = button.dataset.demoAction || "This action is ready for PHP integration.";
+      const message = button.dataset.demoAction || "This action is demo action.";
       const alert = document.querySelector("[data-portal-alert]");
       if (!alert) return;
       alert.textContent = message;

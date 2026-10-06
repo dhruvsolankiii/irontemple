@@ -1,220 +1,264 @@
-// --- MOBILE NAV MENU TOGGLE ---
-      const hamburgerBtn = document.getElementById("hamburger-btn");
-      const navMenu = document.getElementById("nav-menu");
-      const navLinks = document.querySelectorAll(".nav-link");
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const navMenu = document.getElementById("nav-menu");
+  const navLinks = document.querySelectorAll(".nav-link");
 
-      hamburgerBtn.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+      const icon = hamburgerBtn.querySelector("i");
+      if (!icon) return;
+
+      if (navMenu.classList.contains("active")) {
+        icon.className = "fa-solid fa-xmark";
+      } else {
+        icon.className = "fa-solid fa-bars";
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
         const icon = hamburgerBtn.querySelector("i");
-        if (navMenu.classList.contains("active")) {
-          icon.className = "fa-solid fa-xmark";
-        } else {
+        if (icon) {
           icon.className = "fa-solid fa-bars";
         }
       });
+    });
+  }
 
-      // Close mobile nav when clicking any link
+  const header = document.getElementById("header");
+  const sections = document.querySelectorAll("section");
+
+  if (header && navLinks.length) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+
+      let currentSec = "";
+      sections.forEach((sec) => {
+        const secTop = sec.offsetTop;
+        if (window.scrollY >= secTop - 150) {
+          currentSec = sec.getAttribute("id");
+        }
+      });
+
       navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          navMenu.classList.remove("active");
-          hamburgerBtn.querySelector("i").className = "fa-solid fa-bars";
-        });
+        link.classList.remove("active");
+        const href = link.getAttribute("href") || "";
+        if (href.includes(currentSec)) {
+          link.classList.add("active");
+        }
       });
+    });
+  }
 
-      // --- STICKY NAV & ACTIVE NAVIGATION CODES ---
-      const header = document.getElementById("header");
-      const sections = document.querySelectorAll("section");
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const icon = themeToggleBtn.querySelector("i");
 
-      window.addEventListener("scroll", () => {
-        // Sticky Navbar
-        if (window.scrollY > 50) {
-          header.classList.add("sticky");
+      if (currentTheme === "light") {
+        document.documentElement.removeAttribute("data-theme");
+        if (icon) icon.className = "fa-solid fa-moon";
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        if (icon) icon.className = "fa-solid fa-sun";
+      }
+    });
+  }
+
+  const bmiForm = document.getElementById("bmiForm");
+  if (bmiForm) {
+    const bmiResult = document.getElementById("bmiResult");
+    const bmiValue = document.getElementById("bmiValue");
+    const bmiStatus = document.getElementById("bmiStatus");
+
+    bmiForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const weightField = document.getElementById("bmi-weight");
+      const heightField = document.getElementById("bmi-height");
+
+      if (!weightField || !heightField || !bmiValue || !bmiStatus || !bmiResult) return;
+
+      const weight = parseFloat(weightField.value);
+      const height = parseFloat(heightField.value) / 100;
+
+      if (weight > 0 && height > 0) {
+        const bmi = (weight / (height * height)).toFixed(1);
+        bmiValue.textContent = bmi;
+
+        let status = "";
+        let statusColor = "#ff3e3e";
+
+        if (Number(bmi) < 18.5) {
+          status = "Underweight";
+          statusColor = "#ffb300";
+        } else if (Number(bmi) >= 18.5 && Number(bmi) <= 24.9) {
+          status = "Normal Weight";
+          statusColor = "#2e7d32";
+        } else if (Number(bmi) >= 25 && Number(bmi) <= 29.9) {
+          status = "Overweight";
+          statusColor = "#ef6c00";
         } else {
-          header.classList.remove("sticky");
+          status = "Obese";
+          statusColor = "#c62828";
         }
 
-        // Highlight active link
-        let currentSec = "";
-        sections.forEach((sec) => {
-          const secTop = sec.offsetTop;
-          const secHeight = sec.clientHeight;
-          if (window.scrollY >= secTop - 150) {
-            currentSec = sec.getAttribute("id");
-          }
-        });
+        bmiStatus.textContent = status;
+        bmiStatus.style.color = statusColor;
+        bmiResult.style.display = "block";
+      }
+    });
+  }
 
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href").includes(currentSec)) {
-            link.classList.add("active");
-          }
-        });
+  const slides = document.querySelectorAll(".testimonial-slide");
+  const dots = document.querySelectorAll(".slider-dot");
+  if (slides.length && dots.length) {
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+      slides.forEach((slide) => slide.classList.remove("active"));
+      dots.forEach((dot) => dot.classList.remove("active"));
+
+      slides[index].classList.add("active");
+      dots[index].classList.add("active");
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        clearInterval(slideInterval);
+        const targetIndex = parseInt(dot.getAttribute("data-index"), 10);
+        showSlide(targetIndex);
+        slideInterval = setInterval(nextSlide, 5000);
       });
+    });
 
-      // --- THEME TOGGLE FUNCTIONALITY ---
-      const themeToggleBtn = document.getElementById("theme-toggle");
+    slideInterval = setInterval(nextSlide, 5000);
+  }
 
-      themeToggleBtn.addEventListener("click", () => {
-        const currentTheme =
-          document.documentElement.getAttribute("data-theme");
-        const icon = themeToggleBtn.querySelector("i");
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    if (!question) return;
 
-        if (currentTheme === "light") {
-          document.documentElement.removeAttribute("data-theme");
-          icon.className = "fa-solid fa-moon";
-        } else {
-          document.documentElement.setAttribute("data-theme", "light");
-          icon.className = "fa-solid fa-sun";
-        }
-      });
+    question.addEventListener("click", () => {
+      const activeItem = document.querySelector(".faq-item.active");
+      if (activeItem && activeItem !== item) {
+        activeItem.classList.remove("active");
+      }
+      item.classList.toggle("active");
+    });
+  });
 
-      // --- BMI CALCULATOR CODE ---
-      const bmiForm = document.getElementById("bmiForm");
-      const bmiResult = document.getElementById("bmiResult");
-      const bmiValue = document.getElementById("bmiValue");
-      const bmiStatus = document.getElementById("bmiStatus");
+  const registerForm = document.getElementById("registerForm");
+  const successBox = document.getElementById("registerSuccess");
 
-      bmiForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const weight = parseFloat(document.getElementById("bmi-weight").value);
-        const height =
-          parseFloat(document.getElementById("bmi-height").value) / 100; // to meters
+  if (registerForm && successBox) {
+    const setFieldState = (fieldId, valid, message = "") => {
+      const field = document.getElementById(fieldId);
+      const errorBox = document.getElementById(`${fieldId}Error`);
+      if (!field) return;
 
-        if (weight > 0 && height > 0) {
-          const bmi = (weight / (height * height)).toFixed(1);
-          bmiValue.textContent = bmi;
+      field.classList.toggle("is-invalid", !valid);
+      field.classList.toggle("is-valid", valid && field.value.trim() !== "");
 
-          let status = "";
-          let statusColor = "#ff3e3e";
+      if (errorBox) {
+        errorBox.textContent = message;
+        errorBox.style.display = message ? "block" : "none";
+      }
+    };
 
-          if (bmi < 18.5) {
-            status = "Underweight";
-            statusColor = "#ffb300";
-          } else if (bmi >= 18.5 && bmi <= 24.9) {
-            status = "Normal Weight";
-            statusColor = "#2e7d32";
-          } else if (bmi >= 25 && bmi <= 29.9) {
-            status = "Overweight";
-            statusColor = "#ef6c00";
-          } else {
-            status = "Obese";
-            statusColor = "#c62828";
-          }
+    const validateForm = () => {
+      const nameField = document.getElementById("reg-name");
+      const emailField = document.getElementById("reg-email");
+      const phoneField = document.getElementById("reg-phone");
+      const genderField = document.getElementById("reg-gender");
+      const passwordField = document.getElementById("reg-password");
+      const confirmField = document.getElementById("reg-confirm-password");
+      const planField = document.getElementById("reg-plan");
+      let isValid = true;
 
-          bmiStatus.textContent = status;
-          bmiStatus.style.color = statusColor;
-          bmiResult.style.display = "block";
-        }
-      });
-
-      // --- TESTIMONIAL SLIDER ---
-      const slides = document.querySelectorAll(".testimonial-slide");
-      const dots = document.querySelectorAll(".slider-dot");
-      let currentSlide = 0;
-      let slideInterval;
-
-      function showSlide(index) {
-        slides.forEach((slide) => slide.classList.remove("active"));
-        dots.forEach((dot) => dot.classList.remove("active"));
-
-        slides[index].classList.add("active");
-        dots[index].classList.add("active");
-        currentSlide = index;
+      if (!nameField || nameField.value.trim().length < 3) {
+        setFieldState("reg-name", false, "Please enter your full name.");
+        isValid = false;
+      } else {
+        setFieldState("reg-name", true);
       }
 
-      function nextSlide() {
-        let next = (currentSlide + 1) % slides.length;
-        showSlide(next);
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailField || !emailPattern.test(emailField.value.trim())) {
+        setFieldState("reg-email", false, "Please enter a valid email address.");
+        isValid = false;
+      } else {
+        setFieldState("reg-email", true);
       }
 
-      // Dot navigation click events
-      dots.forEach((dot) => {
-        dot.addEventListener("click", () => {
-          clearInterval(slideInterval);
-          const targetIndex = parseInt(dot.getAttribute("data-index"));
-          showSlide(targetIndex);
-          startAutoSlide();
-        });
-      });
-
-      function startAutoSlide() {
-        slideInterval = setInterval(nextSlide, 5000); // changes every 5 seconds
-      }
-
-      startAutoSlide();
-
-      // --- FAQ ACCORDION CODE ---
-      const faqItems = document.querySelectorAll(".faq-item");
-
-      faqItems.forEach((item) => {
-        const question = item.querySelector(".faq-question");
-        question.addEventListener("click", () => {
-          const activeItem = document.querySelector(".faq-item.active");
-          if (activeItem && activeItem !== item) {
-            activeItem.classList.remove("active");
-          }
-          item.classList.toggle("active");
-        });
-      });
-
-      // --- REGISTRATION FORM VALIDATION ---
-      const registerForm = document.getElementById("registerForm");
-      const successBox = document.getElementById("registerSuccess");
-
-      registerForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const nameField = document.getElementById("reg-name");
-        const emailField = document.getElementById("reg-email");
-        const phoneField = document.getElementById("reg-phone");
-        const planField = document.getElementById("reg-plan");
-
-        let isValid = true;
-
-        // Name validation (min length 3)
-        if (nameField.value.trim().length < 3) {
-          document.getElementById("group-name").classList.add("invalid");
-          isValid = false;
-        } else {
-          document.getElementById("group-name").classList.remove("invalid");
-        }
-
-        // Email validation regex pattern
-        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!emailPattern.test(emailField.value.trim())) {
-          document.getElementById("group-email").classList.add("invalid");
-          isValid = false;
-        } else {
-          document.getElementById("group-email").classList.remove("invalid");
-        }
-
-        // Phone validation (numbers only, min 10 digits)
+      if (phoneField) {
         const phoneNum = phoneField.value.trim().replace(/\D/g, "");
         if (phoneNum.length < 10) {
-          document.getElementById("group-phone").classList.add("invalid");
+          setFieldState("reg-phone", false, "Please enter a valid 10-digit mobile number.");
           isValid = false;
         } else {
-          document.getElementById("group-phone").classList.remove("invalid");
+          setFieldState("reg-phone", true);
         }
+      }
 
-        // Plan validation
-        if (planField.value === "") {
-          document.getElementById("group-plan").classList.add("invalid");
-          isValid = false;
-        } else {
-          document.getElementById("group-plan").classList.remove("invalid");
-        }
+      if (!genderField || genderField.value === "") {
+        setFieldState("reg-gender", false, "Please select your gender.");
+        isValid = false;
+      } else {
+        setFieldState("reg-gender", true);
+      }
 
-        // Handle validation result
-        if (isValid) {
-          successBox.style.display = "block";
-          registerForm.reset();
-          // Scroll page back up slightly to let the success notice be seen
-          successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (!passwordField || !/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/.test(passwordField.value)) {
+        setFieldState("reg-password", false, "Use 8+ chars, including uppercase, lowercase, number, and symbol.");
+        isValid = false;
+      } else {
+        setFieldState("reg-password", true);
+      }
 
-          // Hide notice after 6 seconds
-          setTimeout(() => {
-            successBox.style.display = "none";
-          }, 6000);
-        }
-      });
+      if (!confirmField || confirmField.value !== passwordField.value || confirmField.value === "") {
+        setFieldState("reg-confirm-password", false, "Passwords do not match.");
+        isValid = false;
+      } else {
+        setFieldState("reg-confirm-password", true);
+      }
+
+      if (planField && planField.value === "") {
+        setFieldState("reg-plan", false, "Please select a plan.");
+        isValid = false;
+      } else if (planField) {
+        setFieldState("reg-plan", true);
+      }
+
+      return isValid;
+    };
+
+    registerForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const isValid = validateForm();
+
+      if (isValid) {
+        successBox.style.display = "block";
+        registerForm.reset();
+        successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+
+        setTimeout(() => {
+          successBox.style.display = "none";
+        }, 6000);
+      }
+    });
+  }
+});

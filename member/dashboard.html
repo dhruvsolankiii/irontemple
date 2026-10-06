@@ -16,13 +16,13 @@
       <nav class="portal-nav" aria-label="Member navigation">
         <span class="nav-section">My account</span>
         <a class="active" href="dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
-        <a href="#profile"><i class="fa-solid fa-user"></i> My profile</a>
-        <a href="#membership"><i class="fa-solid fa-id-card"></i> Membership</a>
-        <a href="#bookings"><i class="fa-solid fa-calendar-check"></i> My bookings</a>
+        <a href="profile.html"><i class="fa-solid fa-user"></i> My profile</a>
+        <a href="membership.html"><i class="fa-solid fa-id-card"></i> Membership</a>
+        <a href="bookings.html"><i class="fa-solid fa-calendar-check"></i> My bookings</a>
         <span class="nav-section">Progress</span>
-        <a href="#workouts"><i class="fa-solid fa-dumbbell"></i> Workout plans</a>
-        <a href="#attendance"><i class="fa-solid fa-chart-line"></i> Attendance</a>
-        <a href="#bmi"><i class="fa-solid fa-heart-pulse"></i> BMI history</a>
+        <a href="workout-plans.html"><i class="fa-solid fa-dumbbell"></i> Workout plans</a>
+        <a href="attendance.html"><i class="fa-solid fa-chart-line"></i> Attendance</a>
+        <a href="bmi-history.html"><i class="fa-solid fa-heart-pulse"></i> BMI history</a>
       </nav>
       <div class="portal-sidebar-footer"><a class="portal-nav-link text-white" href="../index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></div>
     </aside>
@@ -30,14 +30,14 @@
       <header class="portal-topbar"><div class="d-flex align-items-center gap-3"><button class="btn btn-light portal-mobile-toggle" data-portal-menu aria-expanded="false" aria-label="Open member navigation"><i class="fa-solid fa-bars"></i></button><div><strong>Member portal</strong><div class="small text-muted">Your fitness journey at a glance</div></div></div><div class="d-flex align-items-center gap-2"><span class="portal-avatar">AK</span><span class="d-none d-sm-inline">Ananya Kapoor</span></div></header>
       <div class="portal-content">
         <div class="alert alert-success d-none" data-portal-alert role="status"></div>
-        <div class="portal-page-heading"><div><h1>Welcome back, Ananya</h1><p>Keep your momentum going. You are doing great this week.</p></div><button class="btn btn-primary" data-demo-action="Booking request is ready for PHP integration."><i class="fa-solid fa-calendar-plus me-2"></i>Book a session</button></div>
+        <div class="portal-page-heading"><div><h1>Welcome back, Ananya</h1><p>Keep your momentum going. You are doing great this week.</p></div><button class="btn btn-primary" data-demo-action="Booking request is demo action."><i class="fa-solid fa-calendar-plus me-2"></i>Book a session</button></div>
         <div class="row g-4 mb-4">
           <div class="col-md-4"><div class="portal-card portal-stat"><span class="portal-stat-icon bg-primary-subtle text-primary"><i class="fa-solid fa-id-card"></i></span><div class="portal-stat-value">Pro Plan</div><div class="portal-stat-label">Renews on Jan 05, 2027</div></div></div>
           <div class="col-md-4"><div class="portal-card portal-stat"><span class="portal-stat-icon bg-success-subtle text-success"><i class="fa-solid fa-calendar-check"></i></span><div class="portal-stat-value">12 visits</div><div class="portal-stat-label">Attendance this month</div></div></div>
           <div class="col-md-4"><div class="portal-card portal-stat"><span class="portal-stat-icon bg-warning-subtle text-warning"><i class="fa-solid fa-fire"></i></span><div class="portal-stat-value">7 day streak</div><div class="portal-stat-label">Personal best this month</div></div></div>
         </div>
         <div class="row g-4">
-          <div class="col-lg-7"><section class="portal-card" id="bookings"><div class="portal-card-header"><h2>Upcoming sessions</h2><a href="#bookings">View calendar</a></div><div class="portal-card-body"><div class="d-flex align-items-center gap-3 border-bottom pb-3 mb-3"><span class="portal-stat-icon bg-primary-subtle text-primary mb-0"><i class="fa-solid fa-dumbbell"></i></span><div class="flex-grow-1"><strong>Strength & conditioning</strong><div class="small text-muted">With Arjun Mehta · Today, 6:00 PM</div></div><span class="badge text-bg-primary">Confirmed</span></div><div class="d-flex align-items-center gap-3"><span class="portal-stat-icon bg-info-subtle text-info mb-0"><i class="fa-solid fa-person-running"></i></span><div class="flex-grow-1"><strong>Mobility session</strong><div class="small text-muted">With Priya Shah · Oct 09, 7:00 AM</div></div><span class="badge text-bg-warning">Pending</span></div></div></section></div>
+          <div class="col-lg-7"><section class="portal-card" id="bookings"><div class="portal-card-header"><h2>Upcoming sessions</h2><a href="bookings.html">View calendar</a></div><div class="portal-card-body"><div class="d-flex align-items-center gap-3 border-bottom pb-3 mb-3"><span class="portal-stat-icon bg-primary-subtle text-primary mb-0"><i class="fa-solid fa-dumbbell"></i></span><div class="flex-grow-1"><strong>Strength & conditioning</strong><div class="small text-muted">With Arjun Mehta · Today, 6:00 PM</div></div><span class="badge text-bg-primary">Confirmed</span></div><div class="d-flex align-items-center gap-3"><span class="portal-stat-icon bg-info-subtle text-info mb-0"><i class="fa-solid fa-person-running"></i></span><div class="flex-grow-1"><strong>Mobility session</strong><div class="small text-muted">With Priya Shah · Oct 09, 7:00 AM</div></div><span class="badge text-bg-warning">Pending</span></div></div></section></div>
           <div class="col-lg-5"><section class="portal-card mb-4" id="membership"><div class="portal-card-header"><h2>Membership status</h2><span class="badge text-bg-success">Active</span></div><div class="portal-card-body"><h3 class="h5">Pro Plan</h3><p class="text-muted small">Quarterly membership · ₹2,499</p><div class="progress mb-2" role="progressbar" aria-label="Membership duration remaining" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 68%"></div></div><div class="d-flex justify-content-between small text-muted"><span>68 days used</span><span>22 days left</span></div></div></section><section class="portal-card" id="bmi"><div class="portal-card-header"><h2>Latest BMI</h2><a href="../bmi.html">Recalculate</a></div><div class="portal-card-body d-flex align-items-center justify-content-between"><div><div class="portal-stat-value">22.7</div><div class="text-success small fw-semibold">Normal weight</div></div><div class="text-muted small">Updated Oct 01, 2026</div></div></section></div>
         </div>
       </div>

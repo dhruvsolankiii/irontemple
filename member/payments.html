@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payments - IronTemple</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/portal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="portal-body">
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <a class="portal-brand" href="dashboard.html"><span class="brand-icon"><i class="fa-solid fa-dumbbell"></i></span> IronTemple</a>
+      <nav class="portal-nav" aria-label="Member navigation">
+        <span class="nav-section">My account</span>
+        <a href="dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+        <a href="profile.html"><i class="fa-solid fa-user"></i> My profile</a>
+        <a href="membership.html"><i class="fa-solid fa-id-card"></i> Membership</a>
+        <a href="bookings.html"><i class="fa-solid fa-calendar-check"></i> My bookings</a>
+        <span class="nav-section">Progress</span>
+        <a href="workout-plans.html"><i class="fa-solid fa-dumbbell"></i> Workout plans</a>
+        <a href="attendance.html"><i class="fa-solid fa-chart-line"></i> Attendance</a>
+        <a href="bmi-history.html"><i class="fa-solid fa-heart-pulse"></i> BMI history</a>
+      </nav>
+      <div class="portal-sidebar-footer"><a class="portal-nav-link text-white" href="../index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></div>
+    </aside>
+    <main class="portal-main">
+      <header class="portal-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-light portal-mobile-toggle" data-portal-menu aria-expanded="false" aria-label="Open member navigation"><i class="fa-solid fa-bars"></i></button>
+          <div><strong>Payments</strong><div class="small text-muted">Your payment history and invoices</div></div>
+        </div>
+        <div class="d-flex align-items-center gap-2"><span class="portal-avatar">AK</span><span class="d-none d-sm-inline">Ananya Kapoor</span></div>
+      </header>
+      <div class="portal-content">
+        <div class="portal-page-heading"><div><h1>Payments</h1><p class="text-muted">View your invoices and payment status.</p></div><button class="btn btn-primary" data-demo-action="Payment flow is demo action."><i class="fa-solid fa-receipt me-2"></i>View invoices</button></div>
+        <section class="portal-card">
+          <div class="portal-card-header"><h2>Payment history</h2><div class="d-flex gap-2"><input class="form-control form-control-sm" data-table-filter="#paymentsTable" placeholder="Search payments..." aria-label="Search payments" /></div></div>
+          <div class="table-responsive"><table class="table portal-table" id="paymentsTable"><thead><tr><th>Date</th><th>Amount</th><th>Plan</th><th>Method</th><th>Status</th><th>Receipt</th></tr></thead><tbody>
+            <tr><td>2026-09-01</td><td>₹2,499</td><td>Pro Plan</td><td>Card</td><td><span class="badge text-bg-success">Paid</span></td><td><button class="btn btn-sm btn-light" data-demo-action="Download receipt."><i class="fa-solid fa-download"></i></button></td></tr>
+            <tr><td>2026-06-01</td><td>₹2,499</td><td>Pro Plan</td><td>Card</td><td><span class="badge text-bg-success">Paid</span></td><td><button class="btn btn-sm btn-light" data-demo-action="Download receipt."><i class="fa-solid fa-download"></i></button></td></tr>
+          </tbody></table></div>
+          <div class="portal-card-body border-top d-flex justify-content-between align-items-center"><span class="small text-muted">Showing recent payments</span><div></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="../js/portal.js"></script>
+</body>
+</html>

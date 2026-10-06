@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance - IronTemple</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/portal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="portal-body">
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <a class="portal-brand" href="dashboard.html"><span class="brand-icon"><i class="fa-solid fa-dumbbell"></i></span> IronTemple</a>
+      <nav class="portal-nav" aria-label="Member navigation">
+        <span class="nav-section">My account</span>
+        <a href="dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+        <a href="profile.html"><i class="fa-solid fa-user"></i> My profile</a>
+        <a href="membership.html"><i class="fa-solid fa-id-card"></i> Membership</a>
+        <a href="bookings.html"><i class="fa-solid fa-calendar-check"></i> My bookings</a>
+        <span class="nav-section">Progress</span>
+        <a href="workout-plans.html"><i class="fa-solid fa-dumbbell"></i> Workout plans</a>
+        <a class="active" href="attendance.html"><i class="fa-solid fa-chart-line"></i> Attendance</a>
+        <a href="bmi-history.html"><i class="fa-solid fa-heart-pulse"></i> BMI history</a>
+      </nav>
+      <div class="portal-sidebar-footer"><a class="portal-nav-link text-white" href="../index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></div>
+    </aside>
+    <main class="portal-main">
+      <header class="portal-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-light portal-mobile-toggle" data-portal-menu aria-expanded="false" aria-label="Open member navigation"><i class="fa-solid fa-bars"></i></button>
+          <div><strong>Attendance</strong><div class="small text-muted">Your visits and check-ins</div></div>
+        </div>
+        <div class="d-flex align-items-center gap-2"><span class="portal-avatar">AK</span><span class="d-none d-sm-inline">Ananya Kapoor</span></div>
+      </header>
+      <div class="portal-content">
+        <div class="portal-page-heading"><div><h1>Attendance</h1><p class="text-muted">Track your gym visits and progress over time.</p></div><button class="btn btn-primary" data-demo-action="Attendance export is demo action."><i class="fa-solid fa-download me-2"></i>Export</button></div>
+        <section class="portal-card">
+          <div class="portal-card-header"><h2>Recent check-ins</h2><div class="d-flex gap-2"><input class="form-control form-control-sm" data-table-filter="#attendanceTable" placeholder="Search by date or note..." aria-label="Search attendance" /></div></div>
+          <div class="table-responsive"><table class="table portal-table" id="attendanceTable"><thead><tr><th>Date</th><th>Time</th><th>Location</th><th>Note</th></tr></thead><tbody>
+            <tr><td>2026-10-06</td><td>18:05</td><td>Gym Floor A</td><td>Strength session</td></tr>
+            <tr><td>2026-10-04</td><td>07:20</td><td>Studio B</td><td>Yoga</td></tr>
+          </tbody></table></div>
+          <div class="portal-card-body border-top d-flex justify-content-between align-items-center"><span class="small text-muted">Showing recent visits</span><div></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="../js/portal.js"></script>
+</body>
+</html>

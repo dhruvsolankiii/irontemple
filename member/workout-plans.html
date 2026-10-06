@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Plans - IronTemple</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/portal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="portal-body">
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <a class="portal-brand" href="dashboard.html"><span class="brand-icon"><i class="fa-solid fa-dumbbell"></i></span> IronTemple</a>
+      <nav class="portal-nav" aria-label="Member navigation">
+        <span class="nav-section">My account</span>
+        <a href="dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+        <a href="profile.html"><i class="fa-solid fa-user"></i> My profile</a>
+        <a href="membership.html"><i class="fa-solid fa-id-card"></i> Membership</a>
+        <a href="bookings.html"><i class="fa-solid fa-calendar-check"></i> My bookings</a>
+        <span class="nav-section">Progress</span>
+        <a class="active" href="workout-plans.html"><i class="fa-solid fa-dumbbell"></i> Workout plans</a>
+        <a href="attendance.html"><i class="fa-solid fa-chart-line"></i> Attendance</a>
+        <a href="bmi-history.html"><i class="fa-solid fa-heart-pulse"></i> BMI history</a>
+      </nav>
+      <div class="portal-sidebar-footer"><a class="portal-nav-link text-white" href="../index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></div>
+    </aside>
+    <main class="portal-main">
+      <header class="portal-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-light portal-mobile-toggle" data-portal-menu aria-expanded="false" aria-label="Open member navigation"><i class="fa-solid fa-bars"></i></button>
+          <div><strong>Workout plans</strong><div class="small text-muted">Your assigned programs and progress</div></div>
+        </div>
+        <div class="d-flex align-items-center gap-2"><span class="portal-avatar">AK</span><span class="d-none d-sm-inline">Ananya Kapoor</span></div>
+      </header>
+      <div class="portal-content">
+        <div class="portal-page-heading"><div><h1>Workout plans</h1><p class="text-muted">Follow assigned plans and mark progress.</p></div><button class="btn btn-primary" data-demo-action="Request new workout plan."><i class="fa-solid fa-plus me-2"></i>Request plan</button></div>
+        <section class="portal-card">
+          <div class="portal-card-header"><h2>Active plans</h2><div class="d-flex gap-2"><input class="form-control form-control-sm" data-table-filter="#plansTable" placeholder="Search plans..." aria-label="Search workout plans" /></div></div>
+          <div class="table-responsive"><table class="table portal-table" id="plansTable"><thead><tr><th>Plan</th><th>Coach</th><th>Start</th><th>Weeks</th><th>Progress</th><th>Action</th></tr></thead><tbody>
+            <tr><td>Strength Builder</td><td>Arjun Mehta</td><td>2026-09-10</td><td>8</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: 35%">35%</div></div></td><td><button class="btn btn-sm btn-light" data-demo-action="Open plan details."><i class="fa-solid fa-eye"></i></button></td></tr>
+          </tbody></table></div>
+          <div class="portal-card-body border-top d-flex justify-content-between align-items-center"><span class="small text-muted">Track workouts and mark completed sessions</span><div></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="../js/portal.js"></script>
+</body>
+</html>

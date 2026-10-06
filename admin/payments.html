@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payments - IronTemple Admin</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/portal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="portal-body">
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <a class="portal-brand" href="dashboard.html"><span class="brand-icon"><i class="fa-solid fa-dumbbell"></i></span> IronTemple</a>
+      <nav class="portal-nav" aria-label="Admin navigation">
+        <span class="nav-section">Overview</span>
+        <a href="dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a>
+        <span class="nav-section">Management</span>
+        <a href="members.html"><i class="fa-solid fa-users"></i> Members</a>
+        <a href="memberships.html"><i class="fa-solid fa-tags"></i> Memberships</a>
+        <a href="trainers.html"><i class="fa-solid fa-person-running"></i> Trainers</a>
+        <a href="bookings.html"><i class="fa-solid fa-calendar-check"></i> Bookings</a>
+        <a class="active" href="payments.html"><i class="fa-solid fa-credit-card"></i> Payments</a>
+        <span class="nav-section">Operations</span>
+        <a href="attendance.html"><i class="fa-solid fa-clipboard-check"></i> Attendance</a>
+        <a href="messages.html"><i class="fa-solid fa-envelope"></i> Messages</a>
+        <a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+      <div class="portal-sidebar-footer"><a class="portal-nav-link text-white" href="../index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Exit portal</a></div>
+    </aside>
+    <main class="portal-main">
+      <header class="portal-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-light portal-mobile-toggle" data-portal-menu aria-expanded="false" aria-label="Open admin navigation"><i class="fa-solid fa-bars"></i></button>
+          <div><strong>Payments</strong><div class="small text-muted">Track invoices, payouts, and renewals</div></div>
+        </div>
+        <div class="d-flex align-items-center gap-2"><span class="portal-avatar">DS</span><span class="d-none d-sm-inline">Dhruv Solanki</span></div>
+      </header>
+      <div class="portal-content">
+        <div class="alert alert-success d-none" data-portal-alert role="status"></div>
+        <div class="portal-page-heading">
+          <div><h1>Payments</h1><p class="text-muted">Review recent transactions and outstanding dues.</p></div>
+          <button class="btn btn-primary" data-demo-action="Payment report export is demo action."><i class="fa-solid fa-download me-2"></i>Export report</button>
+        </div>
+
+        <section class="portal-card">
+          <div class="portal-card-header"><h2>Recent payments</h2><div class="d-flex gap-2"><input class="form-control form-control-sm" style="max-width: 220px" data-table-filter="#paymentsTable" placeholder="Search payment..." aria-label="Search payment" /></div></div>
+          <div class="table-responsive"><table class="table portal-table" id="paymentsTable"><thead><tr><th>Member</th><th>Plan</th><th>Amount</th><th>Method</th><th>Date</th><th>Status</th></tr></thead><tbody>
+            <tr><td>Ananya Kapoor</td><td>Pro Plan</td><td>₹2,499</td><td>UPI</td><td>2026-10-05</td><td><span class="badge text-bg-success">Paid</span></td></tr>
+            <tr><td>Rahul Shah</td><td>Basic Plan</td><td>₹1,299</td><td>Card</td><td>2026-10-03</td><td><span class="badge text-bg-warning">Pending</span></td></tr>
+            <tr><td>Meera Nair</td><td>Elite Plan</td><td>₹4,299</td><td>Net Banking</td><td>2026-09-29</td><td><span class="badge text-bg-success">Paid</span></td></tr>
+            <tr><td>Vikram Kumar</td><td>Pro Plan</td><td>₹2,499</td><td>Card</td><td>2026-09-22</td><td><span class="badge text-bg-danger">Failed</span></td></tr>
+          </tbody></table></div>
+          <div class="portal-card-body border-top d-flex justify-content-between align-items-center"><span class="small text-muted">Showing 4 transactions</span><div></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="../js/portal.js"></script>
+</body>
+</html>
