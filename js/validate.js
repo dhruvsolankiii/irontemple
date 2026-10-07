@@ -4,6 +4,12 @@
  */
 
 $(document).ready(function () {
+  // Demo-only credentials for the static frontend. Replace with server authentication in production.
+  const DEMO_ACCOUNTS = {
+    "admin@gmail.com": { password: "Admin@123", redirect: "admin/dashboard.html" },
+    "user@gmail.com": { password: "user@123", redirect: "member/dashboard.html" }
+  };
+
   /**
    * Validate a single input element
    * @param {HTMLElement|jQuery} input 
@@ -153,9 +159,23 @@ $(document).ready(function () {
     });
 
     if (isFormValid) {
+      const email = $("#login-email").val().trim().toLowerCase();
+      const password = $("#login-password").val();
+      const account = DEMO_ACCOUNTS[email];
+
+      if (!account || account.password !== password) {
+        $("#loginSuccess")
+          .removeClass("alert-success")
+          .addClass("alert-danger")
+          .text("Invalid email or password. Use one of the demo accounts listed below.")
+          .removeClass("d-none")
+          .fadeIn();
+        return;
+      }
+
       $("#loginSuccess").removeClass("d-none").fadeIn();
       setTimeout(function () {
-        window.location.href = "index.html";
+        window.location.href = account.redirect;
       }, 1500);
     }
   });
@@ -194,4 +214,3 @@ $(document).ready(function () {
     }
   });
 });
-
